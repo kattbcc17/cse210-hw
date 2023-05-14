@@ -6,7 +6,7 @@ class Program
         int menuNum = 0;
         var writtenEntries = new DisplayEntries(){};
             while (menuNum != 5){
-                Console.WriteLine("-=Welcome to the Journal!=-");
+                Console.WriteLine("Welcome to the Journal!");
                 Console.WriteLine("Please Select one of the following options from 1-5");
                 Console.WriteLine("==========================");
                 Console.WriteLine("1. New Journal Entry");
