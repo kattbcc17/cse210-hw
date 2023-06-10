@@ -30,7 +30,7 @@ public class Activity{
     public void DisplayByeMessage(){
         Console.WriteLine("Well Done!!");
         Animations.DisplaySpiner(10);
-        Console.WriteLine($"You have Completed another {_activityTime} of the {_activityName} Activity");
+        Console.WriteLine($"You have completed another {_activityTime} of the {_activityName} Activity");
     }
 
 }

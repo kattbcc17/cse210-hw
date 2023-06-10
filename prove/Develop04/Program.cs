@@ -18,7 +18,7 @@ class Program
     
     //Start
     Console.Clear();
-    Console.WriteLine("Welcome to the mindfulness program. This program has 3 activities to help you ponder and reflectt during the day");
+    Console.WriteLine("Welcome to the mindfulness program. This program has 3 activities to help you ponder and reflect during the day");
     
         int runProgram = 0;
         while(runProgram != 4){
@@ -26,7 +26,7 @@ class Program
             // Read user imput 
             string userSelection = Console.ReadLine();
             //parse imput to int
-            int activity = Int16.Parse(userSelection);
+            int activity = Int32.Parse(userSelection);
 
 
             switch(activity)
