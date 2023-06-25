@@ -6,6 +6,8 @@ public static class GoalFactory
         Console.WriteLine("1. Simple");
         Console.WriteLine("2. Eternal");
         Console.WriteLine("3. Check list");
+        Console.WriteLine("4. Progress Goal");
+        Console.WriteLine("5. Negative Goal");
         Console.Write("Which type of goal would you like to create?: ");
         int value = int.Parse(Console.ReadLine());
         return value;
@@ -53,4 +55,25 @@ public static class GoalFactory
         CheckList checkListGoal = new CheckList(name, description, value, times, bonus, false, 0);
         return checkListGoal;
     }
+
+    public static Goal CreateProgress()
+    {
+        Console.WriteLine("Enter the description of the goal:");
+        string description = Console.ReadLine();
+        Console.WriteLine("Enter the progress achieved:");
+        int progress = Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine("Enter the target progress:");
+        int targetProgress = Convert.ToInt32(Console.ReadLine());
+        return new ProgressGoal(description, false, progress, targetProgress);
+    }
+
+    public static Goal CreateNegative()
+    {
+        Console.WriteLine("Enter the description of the goal:");
+        string description = Console.ReadLine();
+        Console.WriteLine("Enter the penalty:");
+        int penalty = Convert.ToInt32(Console.ReadLine());
+        return new NegativeGoal(description, false, penalty);
+    }
+
 }
