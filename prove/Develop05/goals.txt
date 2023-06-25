@@ -1,0 +1,3 @@
+Simple,Be more proactive,False
+Eternal,Go to the temple twice a week,False
+0
