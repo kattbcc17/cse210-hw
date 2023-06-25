@@ -49,40 +49,56 @@ class Program
                     break;
 
                 case "2":
-                    Console.WriteLine("Goal List:");
-                    DisplayGoals();
+                int number = 1;
+                foreach( Goal goal in GoalList){
+                    Console.Write($"{number}. ");
+                    goal.DisplayGoal();
+                    number += 1;
+                }
                     break;
 
                 case "3":
                     Console.Write("Enter the name of the file: ");
                     filename = Console.ReadLine();
+                    FileManager.SaveGoals(filename, GoalList, score);
                     SaveGoals(filename);
                     break;
 
                 case "4":
                     Console.Write("Enter the name of the file: ");
                     filename = Console.ReadLine();
-                    score = LoadGoals(filename);
+                    score = FileManager.LoadGoals(filename, GoalList, score);
                     break;
 
                 case "5":
                     Console.WriteLine("The Goals are: ");
-                    DisplayGoals();
-                    Console.WriteLine("Enter the goal index to mark as complete:");
-                    int index = Convert.ToInt32(Console.ReadLine());
-                    if (index >= 0 && index < GoalList.Count)
-                    {
-                        Goal goal = GoalList[index];
-                        int earnedPoints = goal.completeGoal();
-                        score += earnedPoints;
-                        Console.WriteLine("Goal marked as complete!");
-                        Console.WriteLine($"Congratulations! You earned {earnedPoints} points.");
+                    number = 1;
+                    // Numerate the goal 
+                    foreach(Goal goal in GoalList){
+                        Console.Write($"{number}. ");
+                        goal.DisplayGoal();
+                        number += 1;
+                    }
+                    Console.Write("Which Goal did you acomplish? ");
+                    int selectedGoal = int.Parse(Console.ReadLine());
+                    
+                    number = 1;
+                    foreach(Goal goal in GoalList){
+                    // Compare the number of the goal with the user selection    
+                        if (selectedGoal == number){
+                        int earnedPorints = goal.completeGoal();
+                        score += earnedPorints;
+                        Console.WriteLine($"*****************************************"); 
+                        Console.WriteLine($"Congratulations you earned {earnedPorints}");
+
                     }
                     else
                     {
                         Console.WriteLine("Invalid goal index. Please try again.");
                     }
                     Console.WriteLine();
+                }
+
                     break;
 
                 case "6":
@@ -94,12 +110,16 @@ class Program
                     Console.WriteLine();
                     break;
             }
+
+             // Add a small delay for the animation effect
+            Thread.Sleep(1000);
         }
     }
 
     static void DisplayMenu()
     {
         Console.WriteLine();
+        Console.WriteLine($"You have {score} points ");   
         Console.WriteLine("Goal Tracker");
         Console.WriteLine($"Today is {DateTime.Today.ToString("MM/dd/yyyy")}");
         Console.WriteLine();

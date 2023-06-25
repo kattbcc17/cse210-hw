@@ -1,0 +1,4 @@
+Simple,Go once a week,False
+Eternal,Read the Bible in one week,False
+CheckList,exercise twice a day,False
+0
