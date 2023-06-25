@@ -56,24 +56,4 @@ public static class GoalFactory
         return checkListGoal;
     }
 
-    public static Goal CreateProgress()
-    {
-        Console.WriteLine("Enter the description of the goal:");
-        string description = Console.ReadLine();
-        Console.WriteLine("Enter the progress achieved:");
-        int progress = Convert.ToInt32(Console.ReadLine());
-        Console.WriteLine("Enter the target progress:");
-        int targetProgress = Convert.ToInt32(Console.ReadLine());
-        return new ProgressGoal(description, false, progress, targetProgress);
-    }
-
-    public static Goal CreateNegative()
-    {
-        Console.WriteLine("Enter the description of the goal:");
-        string description = Console.ReadLine();
-        Console.WriteLine("Enter the penalty:");
-        int penalty = Convert.ToInt32(Console.ReadLine());
-        return new NegativeGoal(description, false, penalty);
-    }
-
 }

@@ -12,9 +12,10 @@ public class CheckList : Goal
         _value = value;
         _times = times;
         _bonus = bonus;
-        _timesCompleted = timesCompleted;
     }
 
+    
+    
     public override void DisplayGoal()
     {
         if (_iscompleted)
