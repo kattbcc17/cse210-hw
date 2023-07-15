@@ -32,11 +32,9 @@ public abstract class Category{
         _spent += spent;
     }
 
-    public string GetTypeOfCategory()
-    {
+    public string GetType(){
         return _categoryType;
     }
-
 
     public abstract void displayCategories(int number);
     public  abstract string StrimCategory();
