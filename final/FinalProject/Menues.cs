@@ -2,7 +2,7 @@ public static class Menues{
 
      //Main menu 
         public static void DisplayMain(){
-        Console.WriteLine("\n1. Mange Categories");
+        Console.WriteLine("\n1. Manage Categories");
         Console.WriteLine("2. Add Expenses");  
         Console.WriteLine("3. Expenses History");
         Console.WriteLine("4. OverBudget categories");
