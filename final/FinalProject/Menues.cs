@@ -1,43 +1,45 @@
-public static class Menues{
-
-     //Main menu 
-        public static void DisplayMain(){
-        Console.WriteLine("\n1. Mange Categories");
-        Console.WriteLine("2. Add Expenses");  
+public static class Menues
+{
+    // Main menu
+    public static void DisplayMain()
+    {
+        Console.WriteLine("\n1. Manage Categories");
+        Console.WriteLine("2. Add Expenses");
         Console.WriteLine("3. Expenses History");
-        Console.WriteLine("4. OverBudget categories");
-        Console.WriteLine("5. Account summary");
+        Console.WriteLine("4. OverBudget Categories");
+        Console.WriteLine("5. Account Summary");
         Console.WriteLine("6. Exit");
-        }
+    }
 
-        public static void MenuCategories(){
+    public static void MenuCategories()
+    {
         Console.WriteLine("1. Create Categories");
-        Console.WriteLine("2. Display Categories");  
-        Console.WriteLine("3. Remove Categorie");
-         Console.WriteLine("4. Back");
-        }
+        Console.WriteLine("2. Display Categories");
+        Console.WriteLine("3. Remove Category");
+        Console.WriteLine("4. Back");
+    }
 
-        public static void CategoriesType(){
-        Console.WriteLine("\nSelect category type");        
-        Console.WriteLine("1. one time");
-        Console.WriteLine("2. Recurrent");  
-        }
+    public static void CategoriesType()
+    {
+        Console.WriteLine("\nSelect category type");
+        Console.WriteLine("1. One-time");
+        Console.WriteLine("2. Recurrent");
+    }
 
-        public static void monthsMenu(){
-        Console.WriteLine("\nSelect month");        
-        Console.WriteLine("1. january");
-        Console.WriteLine("2. february");
-        Console.WriteLine("3. march");
-        Console.WriteLine("4. april");
-        Console.WriteLine("5. may");
-        Console.WriteLine("6. june");
-        Console.WriteLine("7. july");
-        Console.WriteLine("8. august");
-        Console.WriteLine("9. september");
-        Console.WriteLine("10. october");
-        Console.WriteLine("11. november");
-        Console.WriteLine("12. december");
-        }
-
-
+    public static void MonthsMenu()
+    {
+        Console.WriteLine("\nSelect month");
+        Console.WriteLine("1. January");
+        Console.WriteLine("2. February");
+        Console.WriteLine("3. March");
+        Console.WriteLine("4. April");
+        Console.WriteLine("5. May");
+        Console.WriteLine("6. June");
+        Console.WriteLine("7. July");
+        Console.WriteLine("8. August");
+        Console.WriteLine("9. September");
+        Console.WriteLine("10. October");
+        Console.WriteLine("11. November");
+        Console.WriteLine("12. December");
+    }
 }

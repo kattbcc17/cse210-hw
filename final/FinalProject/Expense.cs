@@ -1,90 +1,99 @@
-public class Expense{
-    string _description;
-    float _value;
-    string _category;
-    string _date;
+public class Expense
+{
+    private string _description;
+    private float _value;
+    private string _category;
+    private string _date;
 
-
-    public Expense(string description, float value, string category, string date){
+    public Expense(string description, float value, string category, string date)
+    {
         _description = description;
         _value = value;
-        _category = category; 
+        _category = category;
         _date = date;
     }
 
-    public string GetCateogry(){
+    public string GetCategory()
+    {
         return _category;
     }
 
-    public float GetValue(){
+    public float GetValue()
+    {
         return _value;
     }
 
-    public void displayExpense(){
-        Console.WriteLine($"Description:{_description} value:{_value} category{_category} date:{_date}");
+    public void DisplayExpense()
+    {
+        Console.WriteLine($"Description: {_description} Value: {_value} Category: {_category} Date: {_date}");
     }
 
-    public string strimExpense(){
+    public string StrimExpense()
+    {
         return $"{_description},{_value},{_category},{_date}";
-      
     }
 
-   
-    public static void CreateDocument(string filname, List<Expense> expenses){
-        string filePath = AppDomain.CurrentDomain.BaseDirectory + @$"{filname}";
+    public static void CreateDocument(string filename, List<Expense> expenses)
+    {
+        string filePath = AppDomain.CurrentDomain.BaseDirectory + @$"{filename}";
         using (StreamWriter monthFile = new StreamWriter(filePath))
-        {   
-            foreach ( Expense expense in expenses){
-                monthFile.WriteLine(expense.strimExpense());
-            }  
-        } 
+        {
+            foreach (Expense expense in expenses)
+            {
+                monthFile.WriteLine(expense.StrimExpense());
+            }
+        }
     }
 
-
-    public static string SelectMonth(int month){
-        string filname =" ";
-        if(month == 1){
-        filname = "january.txt";
+    public static string SelectMonth(int month)
+    {
+        string filename = string.Empty;
+        switch (month)
+        {
+            case 1:
+                filename = "january.txt";
+                break;
+            case 2:
+                filename = "february.txt";
+                break;
+            case 3:
+                filename = "march.txt";
+                break;
+            case 4:
+                filename = "april.txt";
+                break;
+            case 5:
+                filename = "may.txt";
+                break;
+            case 6:
+                filename = "june.txt";
+                break;
+            case 7:
+                filename = "july.txt";
+                break;
+            case 8:
+                filename = "august.txt";
+                break;
+            case 9:
+                filename = "september.txt";
+                break;
+            case 10:
+                filename = "october.txt";
+                break;
+            case 11:
+                filename = "november.txt";
+                break;
+            case 12:
+                filename = "december.txt";
+                break;
+            default:
+                throw new ArgumentException("Invalid month number");
         }
-        else if(month == 2){
-        filname = "february.txt";
-        }
-        else if(month == 3){
-        filname = "march.txt";
-        }
-        else if(month == 4){
-        filname = "april.txt";
-        }
-        else if(month == 5){
-        filname = "may.txt";
-        }
-        else if(month == 6){
-        filname = "june.txt";
-        }
-        else if(month == 7){
-        filname = "july.txt";
-        }
-        else if(month == 8){
-        filname = "august.txt";
-        }
-        else if(month == 9){
-        filname = "september.txt";
-        }
-        else if(month == 10){
-        filname = "october.txt";
-        }
-        else if(month == 11){
-        filname = "november.txt";
-        }
-        else if(month == 12){
-        filname = "december.txt";
-        }
-        return filname;
+        return filename;
     }
 
     public static void SavePerMonth(List<Expense> expenses)
-    {  
-        // Get the mont to name the file 
+    {
         DateTime currentDateTime = DateTime.Today;
         string dateString = currentDateTime.ToString();
         string[] parts = dateString.Split("/");
@@ -92,8 +101,4 @@ public class Expense{
         string fileName = SelectMonth(monthNumber);
         CreateDocument(fileName, expenses);
     }
-
 }
-
-
-    
