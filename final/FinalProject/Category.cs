@@ -32,7 +32,7 @@ public abstract class Category{
         _spent += spent;
     }
 
-    public string GetType(){
+    public string GetTypeOfCategory(){
         return _categoryType;
     }
 
